@@ -1,84 +1,277 @@
-% LaTeX file for resume 
-% This file uses the resume document class (res.cls)
+% resume.tex
+%
+% (c) 2002 Matthew Boedicker <mboedick@mboedick.org> (original author) http://mboedick.org
+% (c) 2003-2007 David J. Grant <davidgrant-at-gmail.com> http://www.davidgrant.ca
+% (c) 2007-2010 Todd C. Miller <Todd.Miller@courtesan.com> http://www.courtesan.com/todd
+%
+% This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unported License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/ or send a letter to Creative Commons, 171 Second Street, Suite 300, San Francisco, California, 94105, USA.
 
-\documentclass{res} 
-%\usepackage{helvetica} % uses helvetica postscript font (download helvetica.sty)
-%\usepackage{newcent}   % uses new century schoolbook postscript font 
-\setlength{\textheight}{9.5in} % increase text height to fit on 1-page 
+\documentclass[letterpaper,11pt]{article}
 
-\begin{document} 
+%-----------------------------------------------------------
+\usepackage[empty]{fullpage}
+\usepackage{color}
+\usepackage{amsfonts}
+\usepackage{pifont}
+\usepackage{fancyhdr} %Required for custom headers
+\usepackage{multicol}
+\setlength{\headheight}{0.5in}
+\usepackage{lastpage} %Required to determine the last page for the footer 
+\definecolor{mygrey}{gray}{0.80}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
 
-\name{HAROLD C. GOODBETTER\\[12pt]}     % the \\[12pt] adds a blank
-				        % line after name      
+% Adjust margins to 0.5in on all sides
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.0in}
+\addtolength{\topmargin}{-0.7in}
+\addtolength{\textheight}{0.5in}
 
-\address{\bf  PRESENT ADDRESS\\193 5th Avenue\\Troy, NY 12180\\(518) 274-1234}
-\address{\bf PERMANENT ADDRESS \\ 110 Brant Avenue \\  Upper Saddle
-         River,   NJ 07458 \\  (201) 555-9509}
-                                  
-\begin{resume}
+%-----------------------------------------------------------
+%Custom commands
+\newcommand{\resitem}[1]{\item[\ding{226}] #1 \vspace{-2pt}}
+\newcommand{\resheading}[1]{{\large \colorbox{mygrey}{\begin{minipage}{\textwidth}{\textbf{#1 \vphantom{p\^{E}}}}\end{minipage}}}}
+\newcommand{\ressubheading}[4]{
+\begin{tabular*}{7.0in}{l@{\extracolsep{\fill}}r}
+		\textbf{#1} & #2 \\
+		\textit{#3} & \textit{#4} \\
+\end{tabular*}\vspace{-6pt}}
 
-\section{JOB OBJECTIVE}          
-    A summer position that will use my accounting and computer
-    skills.          
- 
-\section{EDUCATION}          
-    Rensselaer Polytechnic Institute, Troy, NY  \\        
-    Bachelor of Science, Management, May 1990   \\       
-    Concentration in Management Systems       \\   
-    Minors in Computer Science and Economics  \\        
-    G.P.A. 3.3/4.0          
+\newcommand{\resmastersheading}[6]{
+\begin{tabular*}{7.0in}{l@{\extracolsep{\fill}}r}
+		\textbf{#1} & #2 \\
+		\textit{#3} & \textit{#4} \\
+		{#5} & {#6} \\
+\end{tabular*}\vspace{-6pt}}
 
- 
-\section{EXPERIENCE}
-   \vspace{-0.1in}	
-   \begin{tabbing}
-   \hspace{2.3in}\= \hspace{2.6in}\= \kill % set up two tab positions
-    {\bf Telefund Associate} \>Rensselaer Fund     \>Fall 1987-Present\\
-                             \>Troy, NY
-   \end{tabbing}\vspace{-20pt}      % suppress blank line after tabbing
-    Generated alumni and parent support to reduce tuition,          
-    increase scholarship and financial aid funds; averaging 80          
-    percent pledge rate. Top three percent associate.
-   \begin{tabbing}
-   \hspace{2.3in}\= \hspace{2.6in}\= \kill % set up two tab positions
-    {\bf Team Programmer} \>Group W Cable, Westinghouse Corp \> ~~~~~~ Summer 1987\\
-                          \>Mahway, NJ
-   \end{tabbing}\vspace{-20pt}
-    Liaison between accounting department and controller,          
-    provided assistance with invoice liabilities after          
-    divestiture of Group W Cable by Westinghouse.
-   \begin{tabbing}%
-   \hspace{2.3in}\= \hspace{2.6in}\= \kill % set up two tab positions          
-   {\bf Sales Assistant}  \>AP Technical Sales Inc. \> Summers  1985-86\\
-                          \>Palisades Park, NJ
-   \end{tabbing}\vspace{-20pt}
-    Duties included telemarketing, data entry, and invoicing.          
-    Successfully converted catalog inquiries to sales          
-    opportunities by telemarketing program.          
+\newcommand{\reslineheading}[2]{
+\begin{tabular*}{7.0in}{l@{\extracolsep{\fill}}r}
+		\textbf{#1} & #2 \\
+\end{tabular*}\vspace{-6pt}}
+
+\pagestyle{fancyplain}
+\renewcommand{\headrulewidth}{0.1pt}
+\renewcommand{\headrule}{\hbox to\headwidth{%
+    \color{mygrey}\leaders\hrule height \headrulewidth\hfill}}
+\chead{
+\textbf{\LARGE Shagun Jhaver}\\
+}
+\lhead{
+\small
+2200, Waterview Pkway \\ 
+Richardson, Texas 75080 
+}
+\rhead{
+\small
+972-740-4821 (phone) \\
+sxj124330@utdallas.edu
+}
+\normalsize
+\cfoot{}
+\rfoot{Page\ \thepage\ of\ \pageref{LastPage}} % Bottom right footer
+%-----------------------------------------------------------
 
 
-\section{COMPUTER SKILLS}          
-    Extensive knowledge of hardware and software for IBM PC and          
-    MTS. \\         
-    Proficient programming skills in COBOL, WATFIV (FORTRAN), and          
-    BASIC.          
- 
- 
-\section{HONORS AND AWARDS}          
-    Epsilon Delta Sigma: Honorary Management Society at          
-    Rensselaer    \\      
-    Dean's List of Distinguished Students: Fall 1986-Spring 1988  \\        
-    National Honor Society: Northern Highlands High School  \\        
-    Creative Essay Award: Northern Highlands High School  \\        
-    Meritorious Action Life Saving Award: Boy Scouts of America          
- 
-\section{EXTRACURRICULAR ACTIVITIES}          
-    Epsilon Delta Sigma Public Relations Committee \\         
-    Rensselaer Ski Club     \\     
-    Bergen County Task Force Student Liaison 1986  \\        
-    LEADD (Legislators and Educators Against Drunk Driving) Chairman
-     1985-86  \\        
-    Youth Group - Temple Beth Or Activities Chairman 1985-86          
- 
-\end{resume}
+\begin{document}
+
+\resheading{Objective}
+	\begin{description}
+		\item{To obtain a Spring or Summer 2014 internship in the field of Computer Science.}
+	\end{description}
+
+\resheading{Education}
+\begin{itemize}
+
+\item
+	\resmastersheading{Master of Science in Computer Science}{Expected Dec 2014}{The University of Texas at Dallas, Richardson, Texas}{GPA: 3.953/4}{Thesis: Statistical Classification and String Manipulation Algorithms using MapReduce}{}
+	
+\item
+	\ressubheading{Bachelor of Technology in Electrical Engineering}{August 2010}{Indian Institute of Technology (IIT) Bombay, Mumbai, India}{GPA: 7.46/10}
+
+\end{itemize}
+
+\resheading{Relevant Coursework \& Programming Skills}
+	\begin{multicols}{2}
+	\begin{itemize}
+	\itemsep-0.1em
+		\item{Design and Analysis of Computer Algorithms}
+		\item{Artificial Intelligence} 
+		\item{Advanced Database: Big Data Analytics}
+		\item{Database Design}
+        \item{Machine Learning}
+        \item{Natural Language Processing}
+		\item{Discrete Mathematics}
+		\item{Operating Systems Concepts}
+	\end{itemize}
+	\end{multicols}
+	\vspace{-20pt}
+
+	\begin{description}
+	\begin{multicols}{2}
+		\item[Languages:]
+			\textbf{Python}, Java, C++
+		\item[Operating Systems:]
+			Linux, Windows
+	\end{multicols}
+	\vspace{-20pt}
+		\item[Miscellaneous:]
+			Hadoop, MapReduce, Pig Latin, Hive, Mahout, Cassandra, MySQL, Git, MATLAB
+	\end{description}
+
+\resheading{Projects}
+\begin{itemize}
+
+\item
+	\ressubheading{Developing a new system for Big Data Analytics}{Summer 2013}{Brown University}{Providence, Rhode Island}
+	\begin{itemize}
+		\resitem{Constructed a distributed memory abstraction using LLVM and Julia.} 
+		\resitem{Performed in-memory computations on large clusters in a fault-tolerant manner.}
+	\end{itemize}
+
+\item
+	\ressubheading{Hybridization Methods for the analysis of Biomolecular Networks}{May 2009 - July 2009}{Institut National De Recherche En Informatique Et En Automatique (INRIA)}{Paris, France}
+	\begin{itemize}
+        \resitem{Composed a \textbf{MATLAB} library to implement a model to calculate \textit{Violation Degree}.} 
+        \resitem{Increased the calculation speed by about 30 times.}
+	\end{itemize}
+%	\begin{itemize}
+%		\resitem{Proposed a mathematical model to calculate \textit{Violation Degree}, a measure of how far a given numerical trace is from satisfying a temporal logic specification. }
+%        \resitem{Increased the calculation speed of \textit{Violation Degree} by about 30 times and demonstrated the calculations for more complex specification models and properties.}
+%        \resitem{Composed a \textbf{MATLAB} library to implement this model}
+%        \resitem{Fashioned this library to guide the search for models satisfying a given specification.}
+%	\end{itemize}
+%
+%\item
+%	\reslineheading{Algebraic Analysis of Latin Squares}{\textit{Aug 2009 - May 2010}}
+%	\begin{itemize}
+%        \resitem{Executed a comparative analysis of a variety of algorithms for solving sudokus. Extended this analysis to extract results for special cases of latin squares like symmetric sudokus.}
+%        \resitem{Designed algorithms and formulated codes in C++ to enumerate sudokus and generate \textit{Minimum sudokus} (irreducable sudokus with unique solutions and minimum possible givens). Surveyed the outputs of these codes to predict the minimum possible number of givens in a sudoku puzzle.}
+%        \resitem{Assembled C++ codes for enumerating sudokus and special cases of latin squares using the concepts of lexographical reduction, refined permutation and relabeling, and duplication.}
+%	\end{itemize}
+
+\end{itemize}
+
+%\resheading{Relevant Coursework}
+%	\begin{multicols}{2}
+%	\begin{itemize}
+%	\itemsep-0.1em
+%		\item{Design and Analysis of Computer Algorithms}
+%		\item{Artificial Intelligence} 
+%		\item{Advanced Database: Big Data Analytics}
+%		\item{Database Design}
+%        \item{Machine Learning}
+%        \item{Natural Language Processing}
+%		\item{Discrete Mathematics}
+%		\item{Operating Systems Concepts}
+%	\end{itemize}
+%	\end{multicols}
+
+\resheading{Academic Projects}
+\begin{itemize}
+
+\item
+	\ressubheading{Comparative analysis of approaches to sentiment analysis of tweets}{\textit{Jan 2013 - May 2013}}{Guide: Prof. Latifur Khan}{}
+	\begin{itemize}
+		\resitem{Implemented an application of twitter data processing in \textbf{Java} that predicted the ratings of movies using three different approaches, and compared the ratings obtained with IMDB rating.}
+		\resitem{The first approach used standard lists of positive and negative words to classify each tweet.}
+		\resitem{The second approach used the sentiment140 api for the classification using \textbf{MapReduce}.}
+		\resitem{The third approach created a classification model using a training-and-testing data with naive Bayes method in \textbf{Mahout}, and then used this model to classify each tweet, thereby rating it.}
+	\end{itemize}
+
+\item
+	\ressubheading{Programming Project in Artificial Intelligence}{\textit{Jan 2013 - May 2013}}{Guide: Prof. Haim Schweitzer}{}
+	\begin{itemize}
+		\resitem{Designed and developed a project in \textbf{Python} that simulates Nine Men's Morris board game.}
+		\resitem{Wrote efficient codes to output the best possible moves using the Minimax algorithm and alpha-beta pruning algorithm. The code worked correctly for both white and black players, and in the opening, midgame and end-game phases.}
+		\resitem{Earned the position of \textbf{first champion} in the tournament for this game in the class (76 students) using reliable and fast code and innovative self-designed static estimation algorithms.}
+	\end{itemize}
+
+\item
+	\reslineheading{Date-Intensive Text Processing with MapReduce}{\textit{Jan 2013 - Feb 2013}}
+	\begin{itemize}
+		\resitem{Applied Hadoop mapreduce to derive innovative statistics from the White House Visitor Log containing 2.9 million records.}
+		\resitem{Wrote efficient programs in Java to output the results and used mapreduce chaining for efficiency.}
+	\end{itemize}
+
+\item
+	\reslineheading{Database Design and Implementation Project}{\textit{Aug 2012 - Dec 2012}}
+	\begin{itemize}
+		\resitem{Compiled a conceptual design (EER model) for a large custom City library database project.}
+		\resitem{Developed a relational schema in third normal form for this design and wrote \textbf{SQL} statements to create the database and views, populate the tables and solve challenging queries.}
+		\resitem{Assembled the database in Oracle and used a database state to verify the correctness of queries.}
+	\end{itemize}
+
+%\item
+%	\reslineheading{Dining Philosophers Project}{\textit{Aug 2012 - Dec 2012}}
+%	\begin{itemize}
+%		\resitem{Devised a program in C to synthesize the solution to the Dining Philosophers Problem, a classic concurrency problem, implementing the concepts of thread libraries, process synchronization and deadlock prevention.}
+%	\end{itemize}
+
+%\item
+%	\ressubheading{Ultrasonic Pest Repellent}{\textit{Jan 2009 - April 2009}}{Electronic Design Lab Project (Guide: Prof. Girish Kumar)}{}
+%	\begin{itemize}
+%        \resitem{Designed, constructed and tested a compact pest repellent product that produced ultrasonic sound in the frequency range 20 kHz - 80 kHz to repel pests and insects.}
+%        \resitem{Programmed Atmega-16 microcontroller to produce a continuously varying pattern of frequencies and intensities of sound. Used the LM380 ultrasonic transducer and a separate power module to power the product.}
+%	\end{itemize}
+%
+%
+%\item
+%	\reslineheading{Adaptive Scheduler}{\textit{Aug 2009 - Nov 2009}}
+%	\begin{itemize}
+%        \resitem{Designed a framework in C++ to generate efficient course schedules. The institute's course schedules, when computed using this framework could predict the potential problems faced by students in the selection of courses, and predict slots if time change was required for a particular course.}
+%        \resitem{The framework addressed the issues of availability, capacity and location of classrooms and labs, and ensured that the schedule for most students and faculty members was spread out over the week.}
+%	\end{itemize}
+
+\end{itemize}
+
+\resheading{Professional Experience}
+\begin{itemize}
+\item
+	\ressubheading{Software Developer}{Jan 2011 - June 2012}{Future Bazaar}{Mumbai, India}
+	\begin{itemize}
+		\resitem{Head of the \textit{Analytics and Business Intelligence} Team. }
+		\resitem{Constructed an architecture to carry out ETL (extract, transform and load) processes from multiple databases (ATG, Oracle, MySQL) into a single MySQL database.}
+		\resitem{Conceptualized and implemented Order Life-cycle Management, a system to assign and regulate order-states to the order-items using \textbf{Python}.}
+		\resitem{Independently developed \textit{sellers.futurebazaar.com}, an interface for the sellers to track orders, sales summary and product reviews, upload product inventory and edit profile settings.}
+		\resitem{Helped design and build the E-commerce platforms for the websites \textit{futurebazaar.com} and \textit{chaupaati.in} using Django, a \textbf{Python} based website framework.}
+%		\resitem{Constructed modules for using api's of BI tools like google analytics to generate employees performance and customer behaviour data}
+	\end{itemize}
+\end{itemize}
+
+\resheading{Other Work Experience}
+\begin{itemize}
+
+\item
+	\ressubheading{Math Lab Tutor}{Jan 2013 - Present}{The Student Success Center, The University of Texas at Dallas}{Richardson, Texas} 
+	\begin{itemize}
+		\resitem{Tutor students at the University of Texas at Dallas on an individual or group basis.}
+        \resitem{Assist in a wide variety of subject areas including math, physics and statistics.}
+%        \resitem{Articulate information and mathematical concepts through oral and written communication and through the use of physical and technological demonstrations.}
+	\end{itemize}
+
+\end{itemize}
+
+\resheading{Honours}
+\begin{itemize}
+
+\item{All India Rank 94 in Indian Institute of Technology Joint Entrance Exam 2006 among 300,000 students.}
+\item{All India Rank 396 in All India Engineering Entrance Exam 2006 among 500,000 aspirants.}
+\item{Selected from the state for the 4th Invitational World Youth Mathematics Intercity Competition.}
+
+\end{itemize}
+
+%\resheading{Extra Curricular Activities}
+%
+%\begin{itemize}
+%\item
+%	\ressubheading{Social Service}{}{Mumbai}{}
+%	\begin{itemize}
+%        \resitem{Served as an active member of Group for Rural Activities (GRA), a public welfare group started by the students and faculty of IIT Bombay.}
+%        \resitem{Our work involved demystifying technology in Maharashtra villages and slums and raising public awareness about the efficient utilization of locally available resources like rain-water harvesting techniques.}
+%	\end{itemize}
+%
+%\end{itemize}
+
 \end{document}
