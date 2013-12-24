@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=latex 2013.11.6)  22 DEC 2013 18:50
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=latex 2013.11.6)  23 DEC 2013 17:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -164,7 +164,7 @@ File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 88.
 
-Overfull \hbox (7.27022pt too wide) in alignment at lines 88--88
+Overfull \hbox (11.69102pt too wide) in alignment at lines 88--88
 [] []
  []
 
@@ -179,47 +179,37 @@ Overfull \hbox (6.0pt too wide) in paragraph at lines 123--124
  []
 
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 171--172
+Overfull \hbox (6.0pt too wide) in paragraph at lines 174--175
 [][][][][][][]  
  []
 
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 232--233
+[][][][][][][]  
+ []
+
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 266--267
+[][][][][][][]  
+ []
+
+AED: lastpage setting LastPage
 
 Package Fancyhdr Warning: \headheight is too small (36.135pt): 
  Make it at least 39.2pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-
-Package Fancyhdr Warning: \footskip is too small (0.0pt): 
- Make it at least 9.51996pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
 [1
 
-]
-Overfull \hbox (6.0pt too wide) in paragraph at lines 229--230
-[][][][][][][]  
- []
-
-
-Overfull \hbox (6.0pt too wide) in paragraph at lines 243--244
-[][][][][][][]  
- []
-
-
-Overfull \hbox (6.0pt too wide) in paragraph at lines 256--257
-[][][][][][][]  
- []
-
-AED: lastpage setting LastPage [2] (./one_page_resume.aux) ) 
+] (./one_page_resume.aux) ) 
 Here is how much of TeX's memory you used:
- 915 strings out of 495060
- 12178 string characters out of 3182053
+ 917 strings out of 495060
+ 12205 string characters out of 3182053
  66337 words of memory out of 3000000
- 4116 multiletter control sequences out of 15000+200000
- 11791 words of font info for 44 fonts, out of 3000000 for 9000
+ 4117 multiletter control sequences out of 15000+200000
+ 12150 words of font info for 45 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 28i,11n,43p,344b,392s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 30i,11n,43p,353b,258s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on one_page_resume.dvi (2 pages, 11508 bytes).
+Output written on one_page_resume.dvi (1 page, 7228 bytes).
